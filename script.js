@@ -4,7 +4,7 @@ const EVENT = {
   title: "Cumpleaños de Micaela",
   date: "2026-10-01",
   time: "18:00",
-  location: "Mi casa",
+  location: "A confirmar en privado",
   web3FormsAccessKey: "8acf128e-0a00-43f6-9600-470e1db919b4"
 };
 
