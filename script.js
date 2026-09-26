@@ -4,8 +4,8 @@ const EVENT = {
   title: "Cumpleaños de Micaela",
   date: "2026-10-01",
   time: "18:00",
-  location: "A confirmar en privado",
-  web3FormsAccessKey: "8acf128e-0a00-43f6-9600-470e1db919b4"
+  location: "Coronel Vilela 544",
+  web3FormsAccessKey: "f3c47fd9-c698-4f74-a8fb-eb50b9c803f2"
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -288,8 +288,8 @@ async function submitRsvp(name) {
       headers: { "Content-Type": "application/json", "Accept": "application/json" },
       body: JSON.stringify({
         access_key: EVENT.web3FormsAccessKey,
-        subject: `${name} aceptó la invitación de Micaela`,
-        from_name: "Invitación de Micaela",
+        subject: `Nueva confirmación para Micaela | ${name}`,
+        from_name: "Misión de Micaela | Confirmaciones",
         nombre: name,
         respuesta: "Aceptó la invitación",
         evento: EVENT.title,
