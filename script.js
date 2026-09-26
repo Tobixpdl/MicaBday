@@ -5,7 +5,7 @@ const EVENT = {
   date: "2026-10-01",
   time: "18:00",
   location: "Coronel Vilela 544",
-  web3FormsAccessKey: "f3c47fd9-c698-4f74-a8fb-eb50b9c803f2"
+  web3FormsAccessKey: "319bb023-ab5c-4f41-93e0-f84b6bbe9831"
 };
 
 const $ = (selector) => document.querySelector(selector);
