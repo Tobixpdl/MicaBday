@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#03060d" />
+    <meta name="description" content="Una misión especial: celebrar el cumpleaños de Micaela." />
+    <title>La misión de Micaela · Invitación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) { document.documentElement.classList.add('js-pending'); setTimeout(() => document.documentElement.classList.remove('js-pending'), 5000); }</script>
+    <link rel="preload" href="assets/planet.webp" as="image" />
+    <link rel="preload" href="assets/grogu.webp" as="image" />
+    <link rel="preload" href="assets/hanselar.webp" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="invitation" id="invitation">
+      <div class="boot-screen" aria-hidden="true"><img src="assets/planet.webp" alt="" /></div>
+      <div class="space" aria-hidden="true">
+        <canvas id="starfield"></canvas>
+        <div class="nebula nebula--one parallax-layer" data-depth=".20"></div>
+        <div class="nebula nebula--two parallax-layer" data-depth=".35"></div>
+        <div class="planet-orbit" aria-hidden="true"><div class="planet-anchor parallax-layer" data-depth=".20"><img id="planet" class="planet-image" src="assets/planet.webp" alt="" /></div></div>
+        <div class="space-vignette"></div>
+      </div>
+
+      <div class="poster">
+        <header class="hero intro-reveal">
+          <div class="hero-topline"><span></span><p>DESDE UNA GALAXIA MUY, MUY CERCANA</p><span></span></div>
+          <p class="hero-kicker">MISIÓN DE CUMPLEAÑOS</p>
+          <h1>MICAELA</h1>
+        </header>
+
+        <div class="scene" aria-hidden="true">
+          <div class="ship-flight" id="ship-flight"><img src="assets/razor-crest.webp" alt="" /></div>
+          <div class="ground-light"></div>
+          <div class="grogu-wrap parallax-layer" data-depth=".20"><span class="character-halo"></span><img class="grogu" src="assets/grogu.webp" alt="" /></div>
+          <div class="anzellan-wrap parallax-layer" data-depth=".27"><span class="character-halo"></span><img class="anzellan" src="assets/hanselar.webp" alt="" /></div>
+          <div class="bad-baby"><span>BAD BABY</span></div>
+        </div>
+
+        <section class="details intro-reveal" aria-label="Detalles del cumpleaños">
+          <div class="details-caption"><span class="tiny-diamond">✦</span> COORDENADAS DEL ENCUENTRO <span class="tiny-diamond">✦</span></div>
+          <div class="detail-grid">
+            <div class="detail detail--date"><span class="detail-label">FECHA</span><strong>JUEVES <em>1</em> DE OCTUBRE</strong></div>
+            <div class="detail"><span class="detail-label">HORA</span><strong>DESDE LAS 18:00</strong></div>
+            <div class="detail"><span class="detail-label">LUGAR</span><strong>MI CASA</strong></div>
+          </div>
+        </section>
+
+        <div class="response-area intro-reveal">
+          <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+          <button type="button" id="accept-button" class="accept-button"><span class="saber-energy" aria-hidden="true"></span><span class="button-sweep" aria-hidden="true"></span><span class="saber-hilt" aria-hidden="true"></span><span class="button-spark" aria-hidden="true">✓</span><span id="accept-label">CONFIRMAR INVITACIÓN</span><span class="button-arrow" aria-hidden="true">›</span></button>
+          <button type="button" id="calendar-button" class="calendar-button" hidden><span aria-hidden="true">✦</span> AGREGAR AL CALENDARIO</button>
+        </div>
+      </div>
+
+      <div class="envelope-flight" id="envelope-flight" aria-hidden="true">
+        <div class="envelope-trail"></div>
+        <div class="letter-card"><span>TRANSMISIÓN PERSONAL</span><strong>MICAELA</strong><small>01 · 10 · 2026</small></div>
+        <div class="envelope-shell"><div class="envelope-pocket"></div><div class="envelope-flap"></div><div class="envelope-seal">✦</div></div>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="name-modal" hidden>
+      <div class="name-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+        <button class="modal-close" id="modal-close" type="button" aria-label="Cerrar">×</button>
+        <p class="dialog-kicker">IDENTIFICACIÓN REQUERIDA</p>
+        <h2 id="dialog-title">¿Cuál es tu nombre?</h2>
+        <p id="dialog-description">Para avisarle a Micaela que aceptaste la misión.</p>
+        <form id="name-form">
+          <label class="sr-only" for="guest-input">Tu nombre</label>
+          <input id="guest-input" name="guest" type="text" autocomplete="given-name" maxlength="80" placeholder="Tu nombre" required />
+          <button type="submit" id="confirm-button">CONFIRMAR <span aria-hidden="true">›</span></button>
+        </form>
+        <p class="dialog-error" id="dialog-error" role="alert"></p>
+      </div>
+    </div>
+  </body>
+</html>
